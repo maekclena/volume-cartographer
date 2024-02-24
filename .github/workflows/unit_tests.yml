@@ -7,8 +7,9 @@ on:
       - "develop"
 
 concurrency:
-  group: "${{ github.ref }}"
+  group: "${{ github.workflow }}-${{ github.ref }}"
   cancel-in-progress: true
+
 jobs:
   debian_static:
     name: Debian 12 (static libraries)
